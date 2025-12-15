@@ -2,7 +2,8 @@
 name = "google-photos-pdf"
 version = "0.1.0"
 description = "Convert Google Photos ZIP exports to a single PDF."
-authors = ["Your Name <you@example.com>"]
+authors = ["Andrey Stepantsov <andrey.stepantsov@gmail.com>"]
+package-mode = false  # <--- CRITICAL FIX
 
 [tool.poetry.dependencies]
 python = "^3.11"
