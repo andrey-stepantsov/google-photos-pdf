@@ -30,7 +30,7 @@ Download and run the tool for a one-off conversion without installing it permane
 
 > **⚠️ Important:** Notice the double dash (`--`) before the input arguments. This is required.
 
-'''bash
+```bash
 
 # Syntax: nix run github:yourusername/google-photos-pdf -- [options]
 
@@ -41,13 +41,13 @@ nix run github:yourusername/google-photos-pdf -- -i ./takeout-2023.zip
 # Example 2: Convert a zip, specify a different output directory
 
 nix run github:yourusername/google-photos-pdf -- -i ./takeout-2023.zip -o \~/Documents/ArchivedPhotos/
-'''
+```
 
 ### 2\. Install Permanently
 
 Add the tool to your system environment for frequent use.
 
-'''bash
+```bash
 
 # 1\. Install
 
@@ -56,7 +56,7 @@ nix profile install github:yourusername/google-photos-pdf
 # 2\. Run (no double dash needed)
 
 google-photos-to-pdf -i ./takeout-2023.zip
-'''
+```
 
 -----
 
@@ -72,23 +72,23 @@ This project uses **Devbox** for reproducible system dependencies and **Poetry**
 ### Setup Steps
 
 1.  **Clone the repository:**
-    '''bash
+    ```bash
     git clone [https://github.com/yourusername/google-photos-pdf.git](https://www.google.com/search?q=https://github.com/yourusername/google-photos-pdf.git)
     cd google-photos-pdf
-    '''
+    ```
     *If you have `direnv` set up, the Devbox environment will load automatically.*
 
 2.  **Install Python dependencies:**
     You must run this manually the first time set up the virtual environment.
-    '''bash
+    ```bash
     poetry install
-    '''
+    ```
 
 3.  **Run the tool:**
     You can execute the script using Poetry to ensure it runs within the correct virtual environment.
-    '''bash
+    ```bash
     poetry run python main.py -i /path/to/your/input.zip
-    '''
+    ```
 
 ## 📄 License
 
