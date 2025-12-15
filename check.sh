@@ -25,3 +25,6 @@ else
     echo "❌ Failed! PDF missing."
     exit 1
 fi
+
+echo ""
+echo "🎉 All checks passed!"
