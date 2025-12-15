@@ -21,11 +21,22 @@ fi
 PART=$1
 
 echo "🔍 Step 1: Checking git status..."
-# 1. Ensure the tree is clean
+# 1. Check for uncommitted changes.
+# If only poetry.lock has changed, commit it automatically.
 if [[ -n $(git status -s) ]]; then
-  echo "❌ Error: Git working directory not clean. Commit changes first."
-  git status -s
-  exit 1
+  other_changes=$(git status -s | grep -v "poetry.lock")
+
+  if [[ -n "$other_changes" ]]; then
+    echo "❌ Error: Git working directory not clean. Commit changes first."
+    git status -s
+    exit 1
+  else
+    echo "ℹ️ Found uncommitted changes in poetry.lock. Staging and committing..."
+    git add poetry.lock
+    # Use --no-verify to skip pre-commit hooks that might run on this commit
+    git commit -m "chore: update poetry.lock" --no-verify
+    echo "✅ poetry.lock committed."
+  fi
 fi
 echo "✅ Git working directory is clean"
 
