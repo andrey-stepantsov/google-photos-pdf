@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "google-photos-pdf"
-version = "0.1.2"  # Auto-updated by bump_version.sh
+version = "0.1.4"  # Auto-updated by bump_version.sh
 description = "Convert Google Photos ZIP exports to a single PDF."
 authors = ["Andrey Stepantsov <andrey.stepantsov@gmail.com>"]
 package-mode = false  # <--- CRITICAL FIX

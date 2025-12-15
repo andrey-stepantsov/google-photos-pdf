@@ -76,9 +76,11 @@ echo "✅ Version bumped from $CURRENT_VERSION to $NEW_VERSION"
 # 4. Update pyproject.toml version
 if [ -f pyproject.toml ]; then
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    sed -i '' 's/^version = ".*"/version = "'"$NEW_VERSION"'"/' pyproject.toml
+    # macOS sed requires empty string after -i
+    sed -i '' "s/^version = \"[^\"]*\"/version = \"$NEW_VERSION\"/" pyproject.toml
   else
-    sed -i 's/^version = ".*"/version = "'"$NEW_VERSION"'"/' pyproject.toml
+    # Linux sed
+    sed -i "s/^version = \"[^\"]*\"/version = \"$NEW_VERSION\"/" pyproject.toml
   fi
   echo "✅ Updated pyproject.toml to version $NEW_VERSION"
 fi
