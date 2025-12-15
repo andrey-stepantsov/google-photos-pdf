@@ -1,0 +1,26 @@
+# 1. ARCHITECT (The Brain)
+# Detailed reasoning for complex refactors.
+# (Ensure 'anthropic/claude-sonnet-4-5' is the exact string string available in your 2025 setup)
+model: anthropic/claude-sonnet-4-5
+architect: true
+
+# 2. EDITOR (The Typist)
+# Fast application of diffs.
+editor-model: gemini/gemini-2.5-pro
+
+# 3. VERIFICATION (Python Specific)
+# REPLACED: Verilator references with Python tools.
+# We will create a simple 'check.sh' script to run lints + types.
+test-cmd: ./check.sh
+
+# Stop Aider from committing if tests fail
+auto-test: true
+
+# Appearance
+dark-mode: true
+show-diffs: true
+
+# Context
+read:
+  - CONVENTIONS.md
+  - PLAN.md

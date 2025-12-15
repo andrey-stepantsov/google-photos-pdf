@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    "python@3.11",
+    "libheif",
+    "libjpeg",
+    "poetry"
+  ],
+  "env": {
+    "LD_LIBRARY_PATH": "$LD_LIBRARY_PATH:$DEVBOX_PACKAGES_DIR/lib"
+  },
+  "shell": {
+    "init_hook": [
+      ". $VENV_DIR/bin/activate"
+    ]
+  }
+}
