@@ -26,12 +26,14 @@ def generate_test_data():
     img = Image.new('RGB', (800, 600), color=(200, 50, 100))
     img.save(test_dir / "screenshot_001.png", "PNG")
     
-    # Create 2 HEICs (save as JPEG first, then we'll handle HEIC in main)
-    # Note: Creating actual HEIC files requires libheif encoder
-    # For testing, we'll create JPEGs with .heic extension to simulate
+    # Create 2 fake HEIC files for testing.
+    # NOTE: These are actually JPEGs with a .HEIC extension. This is because
+    # creating true HEIC files requires the `libheif` encoder library, which may
+    # not be available in all test environments. This approach is sufficient
+    # to test the file extension filtering and the HEIC-to-JPEG conversion path
+    # in the main script, as Pillow will open them as JPEGs regardless.
     for i in range(1, 3):
         img = Image.new('RGB', (800, 600), color=(100, i*100, 200))
-        # Save as JPEG but with HEIC extension for testing filter logic
         img.save(test_dir / f"IMG_{i:04d}.HEIC", "JPEG")
     
     # Create junk files
