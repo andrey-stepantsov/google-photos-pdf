@@ -64,7 +64,6 @@ git tag -a "v$NEW_VERSION" -m "Release v$NEW_VERSION"
 
 # 4. Push
 echo "Pushing to origin..."
-git push origin main
-git push origin "v$NEW_VERSION"
+git push origin main "v$NEW_VERSION"
 
 echo "Done! Nix flake users can now update to v$NEW_VERSION"
