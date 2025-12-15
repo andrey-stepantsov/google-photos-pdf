@@ -40,12 +40,25 @@ esac
 NEW_VERSION="$MAJOR.$MINOR.$PATCH"
 echo "$NEW_VERSION" > VERSION
 
+# Update pyproject.toml version
+if [ -f pyproject.toml ]; then
+  # Use sed to update the version line in pyproject.toml
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS sed requires -i with empty string
+    sed -i '' "s/^version = \".*\"/version = \"$NEW_VERSION\"/" pyproject.toml
+  else
+    # Linux sed
+    sed -i "s/^version = \".*\"/version = \"$NEW_VERSION\"/" pyproject.toml
+  fi
+  echo "Updated pyproject.toml to version $NEW_VERSION"
+fi
+
 # Optional: Update __init__.py if you have one
 # sed -i "s/__version__ = .*/__version__ = \"$NEW_VERSION\"/" src/__init__.py
 
 # 3. Commit and Tag
 echo "Bumping version from $CURRENT_VERSION to $NEW_VERSION"
-git add VERSION
+git add VERSION pyproject.toml
 git commit -m "chore: bump version to $NEW_VERSION"
 git tag -a "v$NEW_VERSION" -m "Release v$NEW_VERSION"
 
