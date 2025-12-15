@@ -39,7 +39,7 @@
 
           meta = with pkgs.lib; {
             description = "Convert Google Photos ZIP exports to a single PDF";
-            homepage = "https://github.com/OWNER/REPO";
+            homepage = "https://github.com/andrey-stepantsov/google-photos-pdf";
             license = licenses.mit;
             maintainers = [ ];
             mainProgram = "google-photos-to-pdf";
