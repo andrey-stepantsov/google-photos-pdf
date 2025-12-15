@@ -17,3 +17,8 @@
 ## 4. CLI UX
 - **Progress:** Always use `tqdm` for long-running loops (extraction, processing, saving).
 - **Verbosity:** Default to "clean" output (progress bar only). Use a `--verbose` flag for debug logs.
+
+## 5. Infrastructure & Config (READ-ONLY)
+- **Do NOT modify** `devbox.json`, `pyproject.toml`, or `poetry.lock`.
+- **Assumption:** The environment, libraries, and C-bindings are already correctly configured.
+- **Action:** If you hit an `ImportError` or `ModuleNotFound`, report it to the user. Do **not** attempt to fix it by rewriting the Devbox config.
