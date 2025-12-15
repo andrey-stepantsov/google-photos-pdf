@@ -8,12 +8,12 @@ echo ""
 
 # 1. Generate fresh data
 echo "Step 1: Generating test data..."
-python scripts/generate_test_data.py
+poetry run python scripts/generate_test_data.py
 echo ""
 
 # 2. Run the tool against it
 echo "Step 2: Running converter..."
-python main.py -i test_input.zip -o test_output.pdf
+poetry run python main.py -i test_input.zip -o test_output.pdf
 echo ""
 
 # 3. Verify output exists
