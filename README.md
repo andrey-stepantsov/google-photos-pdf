@@ -22,7 +22,7 @@ You can run this tool directly using the [Nix Package Manager](https://nixos.org
 ### Prerequisites
 
 1.  Install **Nix**: [Instructions here](https://nixos.org/download.html).
-2.  *(Optional but recommended)* Enable **Flakes** if using an older Nix version: [Instructions here](https://www.google.com/search?q=https://nixos.wiki/wiki/Flakes%23Enable_flakes).
+2.  *(Optional but recommended)* Enable **Flakes** if using an older Nix version: [Instructions here](https://nixos.wiki/wiki/Flakes#Enable_flakes).
 
 ### 1\. Run Instantly (Temporary)
 
@@ -36,11 +36,11 @@ Download and run the tool for a one-off conversion without installing it permane
 
 # Example 1: Convert a zip, output PDF in the same location
 
-nix run github:yourusername/google-photos-pdf -- -i ./takeout-2023.zip
+nix run github:andrey-stepantsov/google-photos-pdf -- -i ./takeout-2023.zip
 
 # Example 2: Convert a zip, specify a different output directory
 
-nix run github:yourusername/google-photos-pdf -- -i ./takeout-2023.zip -o \~/Documents/ArchivedPhotos/
+nix run github:andrey-stepantsov/google-photos-pdf -- -i ./takeout-2023.zip -o \~/Documents/ArchivedPhotos/
 ```
 
 ### 2\. Install Permanently
@@ -51,7 +51,7 @@ Add the tool to your system environment for frequent use.
 
 # 1\. Install
 
-nix profile install github:yourusername/google-photos-pdf
+nix profile install github:andrey-stepantsov/google-photos-pdf
 
 # 2\. Run (no double dash needed)
 
@@ -73,13 +73,13 @@ This project uses **Devbox** for reproducible system dependencies and **Poetry**
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/google-photos-pdf.git](https://www.google.com/search?q=https://github.com/yourusername/google-photos-pdf.git)
+    git clone https://github.com/andrey-stepantsov/google-photos-pdf.git
     cd google-photos-pdf
     ```
     *If you have `direnv` set up, the Devbox environment will load automatically.*
 
 2.  **Install Python dependencies:**
-    You must run this manually the first time set up the virtual environment.
+    You must run this manually the first time to set up the virtual environment.
     ```bash
     poetry install
     ```
@@ -92,4 +92,4 @@ This project uses **Devbox** for reproducible system dependencies and **Poetry**
 
 ## 📄 License
 
-[MIT](https://www.google.com/search?q=LICENSE) (or choose your preferred license)
+[MIT](LICENSE)
