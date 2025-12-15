@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "google-photos-pdf"
+version = "0.1.0"
+description = "Convert Google Photos ZIP exports to a single PDF."
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "^10.4.0"
+pillow-heif = "^0.17.0"
+img2pdf = "^0.5.1"
+tqdm = "^4.66.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
